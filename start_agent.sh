@@ -1,7 +1,10 @@
 #!/bin/bash
 
-# Activate your virtualenv
-source /path/to/your/project/venv/bin/activate
+# Go to your project directory
+cd /home/winvinaya/mailbox-agent
 
-# Run your Python agent
-python /path/to/your/project/main.py
+# Activate virtualenv
+source venv/bin/activate
+
+# Run your agent
+python main.py
