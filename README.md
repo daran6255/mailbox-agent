@@ -69,7 +69,7 @@ start_agent.sh
 chmod +x start_agent.sh
 
 ## Start with PM2
-pm2 start /home/ubuntu/mailagent/start_agent.sh --name mail-agent --cron "0 9 * * *"
+pm2 start /home/winvinaya/mailagent/start_agent.sh --name mail-agent --cron "0 9 * * *"
 
 **Check status:**
 pm2 list
