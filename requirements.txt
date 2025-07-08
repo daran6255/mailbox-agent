@@ -1,0 +1,7 @@
+agno
+schedule
+imapclient
+ollama
+aiosmtplib
+psycopg2-binary
+python-dotenv
