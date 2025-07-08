@@ -26,7 +26,7 @@ users = [
     ('menaga.veeramani@winvinayafoundation.org', 'Admin##2024'),
     ('rathna.pm@winvinayafoundation.org', 'Admin##2024'),
     ('nagaratna.m@winvinayafoundation.org', 'Admin##2024'),
-    ('shiva.jayagopal@winvinayafoundation.org', 'Admin##2024')
+    ('shiva.jayagopal@winvinayafoundation.org', 'Admin##2024'),
     ('marimuthu.t@winvinayafoundation.org', 'Admin##2024'),
     ('yogasri.a@winvinayafoundation.org', 'Admin##2024'),
     ('danetta.jose@winvinayafoundation.org', 'Admin##2024'),
