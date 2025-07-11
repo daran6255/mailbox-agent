@@ -82,9 +82,13 @@ pm2 save
 pm2 startup
 
 chmod +x /home/winvinaya/mailbox-agent/check_pm2.sh
-crontab -e
-*/10 * * * * /home/winvinaya/mailbox-agent/check_pm2.sh
 
+
+
+*/10 * * * * /home/winvinaya/mailbox-agent/check_pm2.sh >> /home/winvinaya/mailbox-agent/check_pm2.log 2>&1
+
+
+crontab -l
 
 **Check status:**
 pm2 list
