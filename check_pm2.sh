@@ -1,13 +1,11 @@
 #!/bin/bash
 
-LOG_FILE="/home/winvinaya/mailbox-agent/pm2-error.log"
+# Check if PM2 process exists
+if ! pm2 list | grep -q "mail-agent"; then
+    echo "mail-agent not running, attempting restart..."
 
-# Check PM2 process
-if ! pm2 list | grep -q "mail-agent.*online"; then
-    echo "mail-agent is NOT running!" | mail -s "PM2 ALERT: mail-agent DOWN" info@winvinaya.com
-fi
+    pm2 start /home/winvinaya/mailbox-agent/start_agent.sh --name mail-agent
 
-# Check PM2 logs for new errors
-if grep -qi "Traceback" "$LOG_FILE"; then
-    echo "Error found in PM2 error log" | mail -s "PM2 ERROR in mail-agent" info@winvinaya.com
+    # Send email alert
+    python3 /home/winvinaya/mailbox-agent/send_error_mail.py "mail-agent was not running and was restarted"
 fi
