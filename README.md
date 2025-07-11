@@ -69,13 +69,21 @@ start_agent.sh
 chmod +x start_agent.sh
 
 ## Start with PM2
-pm2 start /home/winvinaya/mailagent/start_agent.sh --name mail-agent --cron "0 9 * * *"
+<!-- pm2 start /home/winvinaya/mailagent/start_agent.sh --name mail-agent --cron "0 9 * * *"
 
-pm2 start /home/winvinaya/mailbox-agent/start_agent.sh --name mail-agent --cron-restart "0 9 * * *"
+pm2 start /home/winvinaya/mailbox-agent/start_agent.sh --name mail-agent --cron-restart "0 9 * * *" -->
 
 pm2 start /home/winvinaya/mailbox-agent/start_agent.sh --name mail-agent --cron-restart "0 9 * * *"
 pm2 save
 pm2 startup
+
+pm2 start ecosystem.config.js
+pm2 save
+pm2 startup
+
+chmod +x /home/winvinaya/mailbox-agent/check_pm2.sh
+crontab -e
+*/10 * * * * /home/winvinaya/mailbox-agent/check_pm2.sh
 
 
 **Check status:**
